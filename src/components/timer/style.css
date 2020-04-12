@@ -1,17 +1,57 @@
 .container {
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
 .timer-mode-selector-container {
     display: flex;
+    margin-bottom: 8px;
 }
 
 .timer-mode-selector {
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    background-color: transparent;
     margin: 0;
-    padding: 4px 8px;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.timer-mode-selector:first-of-type {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 0;
+}
+
+.timer-mode-selector:last-of-type {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: 0;
 }
 
 .timer-mode-selector__active {
-    background-color: black;
-    color: #fff;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.timer-info-container {
+    position: relative;
+}
+
+.timer-info-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.timer-rounds-count {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0;
 }

@@ -52,7 +52,8 @@ const Timer: FunctionalComponent = () => {
                         ...state,
                         isRunning: false,
                         activeMode: mode,
-                        timeLeft: state.modesLength[mode]
+                        timeLeft: state.modesLength[mode],
+                        cyclesCount: 0
                     };
                 case "switchToNextMode":
                     const {
@@ -165,21 +166,29 @@ const Timer: FunctionalComponent = () => {
                     Long break
                 </button>
             </div>
-            <TimeText time={timeLeft} />
+            <div class={style.timerInfoContainer}>
+                <TimeText className={style.timerInfoText} time={timeLeft} />
 
-            <CircleProgress stroke={4} radius={100} progress={progress} />
-
-            <p>
-                {cyclesCount + 1}/{longBreakInterval}
-            </p>
+                <CircleProgress
+                    stroke={8}
+                    radius={128}
+                    progress={progress}
+                    fill="var(--text-color)"
+                />
+            </div>
 
             <div className="buttons">
                 <IconButton
                     name={isRunning ? "pause" : "play"}
-                    width="48"
+                    fill="var(--text-color)"
+                    width="96"
                     onClick={onPlayStopClick}
                 />
             </div>
+
+            <p class={style.timerRoundsCount}>
+                Rounds: {cyclesCount + 1}/{longBreakInterval}
+            </p>
         </section>
     );
 };

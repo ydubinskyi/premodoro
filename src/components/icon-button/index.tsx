@@ -10,7 +10,7 @@ const IconButton: FunctionalComponent<SVGIconProps &
 ) => {
     return (
         <button class={style.button} {...props}>
-            <Icon name={props.name} width={props.width} />
+            <Icon name={props.name} width={props.width} fill={props.fill} />
         </button>
     );
 };

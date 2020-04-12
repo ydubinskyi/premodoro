@@ -3,3 +3,6 @@ export const container: string;
 export const timerModeSelectorContainer: string;
 export const timerModeSelector: string;
 export const timerModeSelectorActive: string;
+export const timerInfoContainer: string;
+export const timerInfoText: string;
+export const timerRoundsCount: string;
