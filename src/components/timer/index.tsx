@@ -3,6 +3,8 @@ import { useEffect, useCallback, useReducer } from "preact/hooks";
 import * as style from "./style.css";
 
 import TimeText from "../time-text";
+import CircleProgress from "../circle-progress";
+import Icon from "../icon";
 
 enum TimerMode {
     POMODORO = "pomodoro",
@@ -119,8 +121,13 @@ const Timer: FunctionalComponent = () => {
         timeLeft,
         activeMode,
         cyclesCount,
-        longBreakInterval
+        longBreakInterval,
+        modesLength
     } = state;
+
+    const timeNeeded = modesLength[activeMode];
+    const progress = (timeLeft / timeNeeded) * 100;
+    console.log({ progress });
     return (
         <section class={style.container}>
             <div class={style.timerModeSelectorContainer}>
@@ -160,13 +167,15 @@ const Timer: FunctionalComponent = () => {
             </div>
             <TimeText time={timeLeft} />
 
+            <CircleProgress stroke={4} radius={100} progress={progress} />
+
             <p>
                 {cyclesCount + 1}/{longBreakInterval}
             </p>
 
             <div className="buttons">
                 <button onClick={onPlayStopClick}>
-                    {isRunning ? "Stop" : "Start"}
+                    <Icon name={isRunning ? "pause" : "play"} width="48" />
                 </button>
             </div>
         </section>
