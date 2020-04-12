@@ -1,3 +1,17 @@
 .container {
     padding: 8px;
 }
+
+.timer-mode-selector-container {
+    display: flex;
+}
+
+.timer-mode-selector {
+    margin: 0;
+    padding: 4px 8px;
+}
+
+.timer-mode-selector__active {
+    background-color: black;
+    color: #fff;
+}
