@@ -12,7 +12,7 @@ const TimeText: FunctionalComponent<Props> = ({ time }: Props) => {
     const seconds = time - minutes * 60;
     return (
         <p>
-            {addZero(minutes)}:{addZero(seconds)}s
+            {addZero(minutes)}:{addZero(seconds)}
         </p>
     );
 };

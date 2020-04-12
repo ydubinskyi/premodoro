@@ -19,14 +19,14 @@ type ActionType =
 
 const initialState = {
     isRunning: false,
-    timeLeft: 5,
+    timeLeft: 25 * 60,
     cyclesCount: 0,
     longBreakInterval: 4,
     activeMode: TimerMode.POMODORO,
     modesLength: {
-        [TimerMode.POMODORO]: 5,
-        [TimerMode.SHORT_BREAK]: 5,
-        [TimerMode.LONG_BREAK]: 5
+        [TimerMode.POMODORO]: 25 * 60,
+        [TimerMode.SHORT_BREAK]: 5 * 60,
+        [TimerMode.LONG_BREAK]: 15 * 60
     }
 };
 
