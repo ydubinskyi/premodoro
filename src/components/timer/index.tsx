@@ -4,7 +4,7 @@ import * as style from "./style.css";
 
 import TimeText from "../time-text";
 import CircleProgress from "../circle-progress";
-import Icon from "../icon";
+import IconButton from "../icon-button";
 
 enum TimerMode {
     POMODORO = "pomodoro",
@@ -174,9 +174,11 @@ const Timer: FunctionalComponent = () => {
             </p>
 
             <div className="buttons">
-                <button onClick={onPlayStopClick}>
-                    <Icon name={isRunning ? "pause" : "play"} width="48" />
-                </button>
+                <IconButton
+                    name={isRunning ? "pause" : "play"}
+                    width="48"
+                    onClick={onPlayStopClick}
+                />
             </div>
         </section>
     );
